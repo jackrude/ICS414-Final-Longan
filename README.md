@@ -1,6 +1,6 @@
 # ICS414-Final-Longan
-- Part of this project used code provided from https://bowfolios.github.io/
-- Using the npm critical-path package for the critical path analysis
+- This project used code from https://bowfolios.github.io/
+- The code for the critical path anaylsis is from the [npm critical-path package](https://github.com/jlburkhead/critical-path).
 
 # Instructions
 
