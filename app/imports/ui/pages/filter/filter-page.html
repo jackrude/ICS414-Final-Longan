@@ -4,12 +4,12 @@
 
       <form class="ui equal width form filter-data-form">
         <div class="field">
-          {{> Select_Form_Control label="Interests" options=interests multiple=true }}
+          {{> Select_Form_Control label="Tasks" options=tasks multiple=true }}
         </div>
         <button class="ui teal button" type="submit">Filter</button>
       </form>
 
-      {{> Filter_Page_Directory profiles=profiles }}
+      {{> Filter_Page_Directory tasks=tasks }}
 
     </div>
   {{/if}}

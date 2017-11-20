@@ -1,0 +1,38 @@
+<template name="Add_Task_Page">
+  {{#if Template.subscriptionsReady}}
+
+    <div class="ui text container segment">
+      <div class="ui dividing header">
+        Add Task
+      </div>
+      <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
+
+        <div class="fields">
+          {{> Text_Form_Control label="Task Name" placeholder="Task 1" value=profile.firstName errorMessage=(fieldError "taskName")}}
+
+        </div>
+
+        <div class="field">
+          {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=profile.picture errorMessage=(fieldError "picture")}}
+        </div>
+
+        <div class="field">
+          {{> Select_Form_Control label="Task Dependencies" options=tasks errorMessage=(fieldError "tasks") multiple=true }}
+        </div>
+
+
+        {{> TextArea_Form_Control label="Description" value=profile.bio placeholder="Description of task" errorMessage=(fieldError "description")}}
+
+
+        <button class="ui primary button" type="submit">Submit</button>
+        {{#if displaySuccessMessage}}
+          <div class="ui success message">
+            <p>Task has been successfully added</p>
+          </div>
+        {{/if}}
+      </form>
+    </div>
+
+  {{/if}}
+
+</template>

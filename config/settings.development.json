@@ -11,5 +11,12 @@
       "popupHeight": 610
     },
     "initialDatabaseFileName": "database/initial-collection-data.json"
-  }
+  },
+  "allowed_users": [
+    "brianmay",
+    "jrude",
+    "vdirenzo",
+    "cleandro",
+    "auernhei"
+  ]
 }

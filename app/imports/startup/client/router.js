@@ -60,6 +60,15 @@ userRoutes.route('/profile', {
   },
 });
 
+export const addTaskPageRouteName = 'Add_Task_Page';
+userRoutes.route('/add-task', {
+  name: addTaskPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: addTaskPageRouteName });
+  },
+});
+
+
 export const filterPageRouteName = 'Filter_Page';
 userRoutes.route('/filter', {
   name: filterPageRouteName,

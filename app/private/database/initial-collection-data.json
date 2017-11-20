@@ -1,5 +1,5 @@
 {
-  "comment": "Initial contents for the BowFolios database. For development purposes only.",
+  "comment": "Initial contents for the Critical Path database. For development purposes only.",
   "collections": [
     {
       "name": "InterestCollection",
@@ -78,6 +78,31 @@
         },
         {
           "name": "Evolutionary Computation",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "TasksCollection",
+      "contents": [
+        {
+          "name": "Task 1",
+          "description": ""
+        },
+        {
+          "name": "Task 2",
+          "description": ""
+        },
+        {
+          "name": "Task 3",
+          "description": ""
+        },
+        {
+          "name": "Task 4",
+          "description": ""
+        },
+        {
+          "name": "Task 5",
           "description": ""
         }
       ]
