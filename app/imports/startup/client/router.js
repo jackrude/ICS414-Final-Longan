@@ -77,14 +77,6 @@ userRoutes.route('/filter', {
   },
 });
 
-export const listTasksPageRouteName = 'List_Tasks_Page';
-userRoutes.route('/list-tasks', {
-  name: listTasksPageRouteName,
-  action() {
-    BlazeLayout.render('User_Layout', { main: listTasksPageRouteName });
-  },
-});
-
 /*                        MISC ROUTES                       */
 FlowRouter.notFound = {
   action() {

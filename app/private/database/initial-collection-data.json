@@ -83,6 +83,87 @@
       ]
     },
     {
+      "name": "TasksCollection",
+      "contents": [
+        {
+          "name": "Software Engineering",
+          "description": "Techniques for development of high quality systems"
+        },
+        {
+          "name": "Algorithms",
+          "description": "A set of rules to be followed in computation"
+        },
+        {
+          "name": "Mobile Networks",
+          "description": "Networks created using mobile devices."
+        },
+        {
+          "name": "Sailing",
+          "description": ""
+        },
+        {
+          "name": "Mars",
+          "description": ""
+        },
+        {
+          "name": "Imu Cooking",
+          "description": "Hawaiian practice of cooking in a pit."
+        },
+        {
+          "name": "Scuba",
+          "description": ""
+        },
+        {
+          "name": "Photography",
+          "description": ""
+        },
+        {
+          "name": "Wind surfing",
+          "description": ""
+        },
+        {
+          "name": "Psychology",
+          "description": ""
+        },
+        {
+          "name": "Motorcycling",
+          "description": ""
+        },
+        {
+          "name": "Accreditation",
+          "description": ""
+        },
+        {
+          "name": "Paddling",
+          "description": ""
+        },
+        {
+          "name": "Crossfit",
+          "description": ""
+        },
+        {
+          "name": "Cybersecurity",
+          "description": ""
+        },
+        {
+          "name": "Surfing",
+          "description": ""
+        },
+        {
+          "name": "Computer Vision",
+          "description": ""
+        },
+        {
+          "name": "Martial Arts",
+          "description": ""
+        },
+        {
+          "name": "Evolutionary Computation",
+          "description": ""
+        }
+      ]
+    },
+    {
       "name": "ProfileCollection",
       "contents": [
         {

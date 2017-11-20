@@ -1,11 +1,10 @@
 <template name="User_Header">
-  <div class="ui top fixed borderless inverted teal menu">
+  <div class="ui top fixed borderless inverted black menu">
     <div class="ui container">
       <div class="item"><h1>Critical Path</h1></div>
       <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">Profile</a>
-      <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">Filter</a>
+      <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">List Tasks</a>
       <a class="{{isActiveRoute "Add_Task_Page"}} item" href="{{pathFor "Add_Task_Page" username=routeUserName}}">Add Task</a>
-      <a class="{{isActiveRoute "List_Tasks_Page"}} item" href="{{pathFor "List_Tasks_Page" username=routeUserName}}">List Tasks</a>
       <div class="right aligned item">{{> Cas_Login }}</div>
     </div>
   </div>
