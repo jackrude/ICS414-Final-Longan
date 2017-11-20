@@ -60,11 +60,28 @@ userRoutes.route('/profile', {
   },
 });
 
+export const addTaskPageRouteName = 'Add_Task_Page';
+userRoutes.route('/add-task', {
+  name: addTaskPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: addTaskPageRouteName });
+  },
+});
+
+
 export const filterPageRouteName = 'Filter_Page';
 userRoutes.route('/filter', {
   name: filterPageRouteName,
   action() {
     BlazeLayout.render('User_Layout', { main: filterPageRouteName });
+  },
+});
+
+export const listTasksPageRouteName = 'List_Tasks_Page';
+userRoutes.route('/list-tasks', {
+  name: listTasksPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: listTasksPageRouteName });
   },
 });
 
