@@ -1,5 +1,4 @@
 <template name="Add_Task_Page">
-
   {{#if Template.subscriptionsReady}}
 
     <div class="ui text container segment">
@@ -20,7 +19,7 @@
         </div>
 
         <div class="field">
-          {{> Select_Form_Control label="Interests" options=interests errorMessage=(fieldError "interests") multiple=true }}
+          {{> Select_Form_Control label="Tasks" options=tasks errorMessage=(fieldError "tasks") multiple=true }}
         </div>
 
         <div class="fields">

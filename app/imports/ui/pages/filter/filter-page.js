@@ -3,12 +3,14 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
+import { Tasks } from '/imports/api/tasks/TaskCollection';
 
 const selectedInterestsKey = 'selectedInterests';
 
 Template.Filter_Page.onCreated(function onCreated() {
   this.subscribe(Interests.getPublicationName());
   this.subscribe(Profiles.getPublicationName());
+  this.subscribe(Tasks.getPublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(selectedInterestsKey, undefined);
 });
@@ -34,12 +36,22 @@ Template.Filter_Page.helpers({
           };
         });
   },
+
+  tasks() {
+    return _.map(Tasks.findAll(),
+        function makeTaskObject(task) {
+          return {
+            label: task.name,
+            selected: _.contains(Template.instance().messageFlags.get(selectedInterestsKey), task.name),
+          };
+    });
+  },
 });
 
 Template.Filter_Page.events({
   'submit .filter-data-form'(event, instance) {
     event.preventDefault();
-    const selectedOptions = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
+    const selectedOptions = _.filter(event.target.Tasks.selectedOptions, (option) => option.selected);
     instance.messageFlags.set(selectedInterestsKey, _.map(selectedOptions, (option) => option.value));
   },
 });

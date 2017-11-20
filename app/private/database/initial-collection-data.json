@@ -1,5 +1,5 @@
 {
-  "comment": "Initial contents for the BowFolios database. For development purposes only.",
+  "comment": "Initial contents for the Critical Path database. For development purposes only.",
   "collections": [
     {
       "name": "InterestCollection",
@@ -86,79 +86,23 @@
       "name": "TasksCollection",
       "contents": [
         {
-          "name": "Software Engineering",
-          "description": "Techniques for development of high quality systems"
-        },
-        {
-          "name": "Algorithms",
-          "description": "A set of rules to be followed in computation"
-        },
-        {
-          "name": "Mobile Networks",
-          "description": "Networks created using mobile devices."
-        },
-        {
-          "name": "Sailing",
+          "name": "Task 1",
           "description": ""
         },
         {
-          "name": "Mars",
+          "name": "Task 2",
           "description": ""
         },
         {
-          "name": "Imu Cooking",
-          "description": "Hawaiian practice of cooking in a pit."
-        },
-        {
-          "name": "Scuba",
+          "name": "Task 3",
           "description": ""
         },
         {
-          "name": "Photography",
+          "name": "Task 4",
           "description": ""
         },
         {
-          "name": "Wind surfing",
-          "description": ""
-        },
-        {
-          "name": "Psychology",
-          "description": ""
-        },
-        {
-          "name": "Motorcycling",
-          "description": ""
-        },
-        {
-          "name": "Accreditation",
-          "description": ""
-        },
-        {
-          "name": "Paddling",
-          "description": ""
-        },
-        {
-          "name": "Crossfit",
-          "description": ""
-        },
-        {
-          "name": "Cybersecurity",
-          "description": ""
-        },
-        {
-          "name": "Surfing",
-          "description": ""
-        },
-        {
-          "name": "Computer Vision",
-          "description": ""
-        },
-        {
-          "name": "Martial Arts",
-          "description": ""
-        },
-        {
-          "name": "Evolutionary Computation",
+          "name": "Task 5",
           "description": ""
         }
       ]
