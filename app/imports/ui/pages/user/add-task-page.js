@@ -4,6 +4,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
+import { Tasks } from '/imports/api/tasks/TaskCollection';
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
@@ -14,7 +15,7 @@ Template.Add_Task_Page.onCreated(function onCreated() {
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displaySuccessMessage, false);
   this.messageFlags.set(displayErrorMessages, false);
-  this.context = Profiles.getSchema().namedContext('Profile_Page');
+  this.context = Tasks.getSchema().namedContext('Add_Task_Page');
 });
 
 Template.Add_Task_Page.helpers({
@@ -28,41 +29,38 @@ Template.Add_Task_Page.helpers({
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
   },
   profile() {
-    return Profiles.findDoc(FlowRouter.getParam('username'));
+    return Tasks.findDoc(FlowRouter.getParam('username'));
   },
   interests() {
-    const profile = Profiles.findDoc(FlowRouter.getParam('username'));
-    const selectedInterests = profile.interests;
-    return profile && _.map(Interests.findAll(),
-            function makeInterestObject(interest) {
-              return { label: interest.name, selected: _.contains(selectedInterests, interest.name) };
+    const task = Tasks.findDoc(FlowRouter.getParam('username'));
+    const selectedTasks = task.tasks;
+    return task && _.map(tasks.findAll(),
+            function makeTaskObject(task) {
+              return { label: task.name, selected: _.contains(selectedTasks, task.name) };
             });
   },
 });
 
 
 Template.Add_Task_Page.events({
-  'submit .profile-data-form'(event, instance) {
+  'submit .task-data-form'(event, instance) {
     event.preventDefault();
-    const firstName = event.target.First.value;
-    const lastName = event.target.Last.value;
-    const title = event.target.Title.value;
+    const taskName = event.target.Title.value;
     const username = FlowRouter.getParam('username'); // schema requires username.
-    const picture = event.target.Picture.value;
-    const github = event.target.Github.value;
-    const facebook = event.target.Facebook.value;
-    const instagram = event.target.Instagram.value;
-    const bio = event.target.Bio.value;
-    const selectedInterests = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
-    const interests = _.map(selectedInterests, (option) => option.value);
 
-    const updatedProfileData = { firstName, lastName, title, picture, github, facebook, instagram, bio, interests,
+    const bio = event.target.Description.value;
+    const selectedTasks = _.filter(event.target.Dependencies.selectedOptions, (option) => option.selected);
+    const dependencies = _.map(selectedTasks, (option) => option.value);
+
+    const updatedTaskData = { taskName, bio, dependencies,
       username };
+
+    console.log(updatedTaskData);
 
     // Clear out any old validation errors.
     instance.context.reset();
     // Invoke clean so that updatedProfileData reflects what will be inserted.
-    const cleanData = Profiles.getSchema().clean(updatedProfileData);
+    const cleanData = Profiles.getSchema().clean(updatedTaskData);
     // Determine validity.
     instance.context.validate(cleanData);
 

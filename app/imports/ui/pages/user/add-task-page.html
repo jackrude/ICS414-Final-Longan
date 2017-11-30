@@ -5,23 +5,23 @@
       <div class="ui dividing header">
         Add Task
       </div>
-      <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
+      <form class="ui equal width form task-data-form {{ successClass }} {{ errorClass }}">
 
         <div class="fields">
-          {{> Text_Form_Control label="Task Name" placeholder="Task 1" value=profile.firstName errorMessage=(fieldError "taskName")}}
+          {{> Text_Form_Control label="Title" placeholder="Task 1" value=task.firstName errorMessage=(fieldError "taskName")}}
 
         </div>
 
         <div class="field">
-          {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=profile.picture errorMessage=(fieldError "picture")}}
+          {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=task.picture errorMessage=(fieldError "picture")}}
         </div>
 
         <div class="field">
-          {{> Select_Form_Control label="Task Dependencies" options=tasks errorMessage=(fieldError "tasks") multiple=true }}
+          {{> Select_Form_Control label="Dependencies" options=tasks errorMessage=(fieldError "tasks") multiple=true }}
         </div>
 
 
-        {{> TextArea_Form_Control label="Description" value=profile.bio placeholder="Description of task" errorMessage=(fieldError "description")}}
+        {{> TextArea_Form_Control label="Description" value=task.bio placeholder="Description of task" errorMessage=(fieldError "description")}}
 
 
         <button class="ui primary button" type="submit">Submit</button>

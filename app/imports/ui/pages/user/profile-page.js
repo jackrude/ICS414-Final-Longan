@@ -59,6 +59,8 @@ Template.Profile_Page.events({
     const updatedProfileData = { firstName, lastName, title, picture, github, facebook, instagram, bio, interests,
       username };
 
+    console.log(updatedProfileData);
+
     // Clear out any old validation errors.
     instance.context.reset();
     // Invoke clean so that updatedProfileData reflects what will be inserted.
