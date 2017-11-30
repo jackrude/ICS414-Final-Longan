@@ -41,7 +41,7 @@ Template.Filter_Page.helpers({
     return _.map(Tasks.findAll(),
         function makeTaskObject(task) {
           return {
-            label: task.Title,
+            label: task.name,
             selected: _.contains(Template.instance().messageFlags.get(selectedInterestsKey), task.name),
           };
     });
@@ -51,7 +51,8 @@ Template.Filter_Page.helpers({
 Template.Filter_Page.events({
   'submit .filter-data-form'(event, instance) {
     event.preventDefault();
-    const selectedOptions = _.filter(event.target.Dependencies.selectedOptions, (option) => option.selected);
+    console.log(Tasks);
+    const selectedOptions = _.filter(event.target.Tasks.selectedOptions, (option) => option.selected);
     instance.messageFlags.set(selectedInterestsKey, _.map(selectedOptions, (option) => option.value));
   },
 });

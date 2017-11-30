@@ -12,6 +12,7 @@ const displayErrorMessages = 'displayErrorMessages';
 Template.Add_Task_Page.onCreated(function onCreated() {
   this.subscribe(Interests.getPublicationName());
   this.subscribe(Profiles.getPublicationName());
+  this.subscribe(Tasks.getPublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displaySuccessMessage, false);
   this.messageFlags.set(displayErrorMessages, false);
@@ -49,7 +50,7 @@ Template.Add_Task_Page.events({
     const username = FlowRouter.getParam('username'); // schema requires username.
 
     const bio = event.target.Description.value;
-    const selectedTasks = _.filter(event.target.Dependencies.selectedOptions, (option) => option.selected);
+    const selectedTasks = _.filter(event.target.Tasks.selectedOptions, (option) => option.selected);
     const dependencies = _.map(selectedTasks, (option) => option.value);
 
     const updatedTaskData = { taskName, bio, dependencies,
@@ -60,14 +61,19 @@ Template.Add_Task_Page.events({
     // Clear out any old validation errors.
     instance.context.reset();
     // Invoke clean so that updatedProfileData reflects what will be inserted.
-    const cleanData = Profiles.getSchema().clean(updatedTaskData);
+    const cleanData = Tasks.getSchema().clean(updatedTaskData);
     // Determine validity.
+
     instance.context.validate(cleanData);
 
+    console.log(instance.context.validate(cleanData));
+
     if (instance.context.isValid()) {
-      const docID = Profiles.findDoc(FlowRouter.getParam('username'))._id;
-      const id = Profiles.update(docID, { $set: cleanData });
-      instance.messageFlags.set(displaySuccessMessage, id);
+      const id = Tasks.insert(updatedTaskData);
+
+      console.log(id);
+      instance.find('form').reset();
+      FlowRouter.go('Filter_Page');
       instance.messageFlags.set(displayErrorMessages, false);
     } else {
       instance.messageFlags.set(displaySuccessMessage, false);

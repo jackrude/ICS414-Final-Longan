@@ -1,5 +1,5 @@
 {
-  "name": "bowfolios",
+  "name": "CPM App",
   "private": true,
   "scripts": {
     "start": "meteor --no-release-check --settings ../config/settings.development.json",

@@ -14,7 +14,7 @@ import { Tracker } from 'meteor/tracker';
 class TaskCollection extends BaseCollection {
 
   /**
-   * Creates the Interest collection.
+   * Creates the Task collection.
    */
   constructor() {
     super('Task', new SimpleSchema({

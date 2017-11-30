@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
-import { _ } from 'meteor/underscore';
 import { Tasks } from '/imports/api/tasks/TaskCollection';
+import { _ } from 'meteor/underscore';
 
 
 /* global Assets */
@@ -15,6 +15,7 @@ import { Tasks } from '/imports/api/tasks/TaskCollection';
  * @param collection The collection of interest.
  */
 function getDefinitions(restoreJSON, collection) {
+  //console.log(_.find(restoreJSON.collections, obj => obj.name === collection).contents);
   return _.find(restoreJSON.collections, obj => obj.name === collection).contents;
 }
 
@@ -35,6 +36,9 @@ Meteor.startup(() => {
   const totalDocuments = _.reduce(collectionList, function reducer(memo, collection) {
     return memo + collection.count();
   }, 0);
+  //console.log(totalDocuments);
+  console.log(collectionList[2].findAll());
+
   if (totalDocuments === 0) {
     const fileName = Meteor.settings.public.initialDatabaseFileName;
     console.log(`Restoring database from file ${fileName}.`);
