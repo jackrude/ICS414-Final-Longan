@@ -1,5 +1,5 @@
 {
-  "name": "CPM App",
+  "name": "cpmapp",
   "private": true,
   "scripts": {
     "start": "meteor --no-release-check --settings ../config/settings.development.json",

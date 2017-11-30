@@ -83,7 +83,7 @@
       ]
     },
     {
-      "name": "TasksCollection",
+      "name": "TaskCollection",
       "contents": [
         {
           "name": "Task 1",

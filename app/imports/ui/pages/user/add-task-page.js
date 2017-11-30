@@ -32,10 +32,10 @@ Template.Add_Task_Page.helpers({
   profile() {
     return Tasks.findDoc(FlowRouter.getParam('username'));
   },
-  interests() {
-    const task = Tasks.findDoc(FlowRouter.getParam('username'));
-    const selectedTasks = task.tasks;
-    return task && _.map(tasks.findAll(),
+  tasks() {
+    const task = Tasks.findDoc(FlowRouter.getParam('name'));
+    const selectedTasks = task.Tasks;
+    return task && _.map(Tasks.findAll(),
             function makeTaskObject(task) {
               return { label: task.name, selected: _.contains(selectedTasks, task.name) };
             });

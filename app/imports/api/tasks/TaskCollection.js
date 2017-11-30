@@ -5,7 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
 import { Tracker } from 'meteor/tracker';
 
-/** @module Interest */
+/** @module Task */
 
 /**
  * Represents a specific interest, such as "Software Engineering".
@@ -38,7 +38,7 @@ class TaskCollection extends BaseCollection {
     check(name, String);
     check(description, String);
     if (this.find({ name }).count() > 0) {
-      throw new Meteor.Error(`${name} is previously defined in another Interest`);
+      throw new Meteor.Error(`${name} is previously defined in another Task`);
     }
     return this._collection.insert({ name, description });
   }

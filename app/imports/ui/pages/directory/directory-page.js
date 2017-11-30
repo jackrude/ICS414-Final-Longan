@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
+import { Tasks } from '/imports/api/tasks/TaskCollection';
 
 Template.Directory_Page.onCreated(function onCreated() {
   this.subscribe(Profiles.getPublicationName());
@@ -12,5 +13,9 @@ Template.Directory_Page.helpers({
    */
   profiles() {
     return Profiles.find({}, { sort: { lastName: 1 } });
+  },
+
+  tasks() {
+    return Tasks.find({}, { sort: { name: 1}});
   },
 });
