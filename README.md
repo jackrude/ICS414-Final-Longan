@@ -4,17 +4,20 @@
 
 # Instructions
 
-After downloading the app, cd into the app directory.
+First, [install Meteor](https://www.meteor.com/install).
 
-If you DO NOT have meteor already installed, you might need to install it by typing in
-
-```
-meteor npm install
-```
-Otherwise, run *meteor npm run start*
+Second, [download a copy of the project](https://github.com/jackrude/ICS414-Final-Longan.git), or clone it using git.
+  
+Third, cd into the app/ directory and install libraries with:
 
 ```
-meteor npm run start
+$ meteor npm install
+```
+
+Fourth, run the system with:
 
 ```
-The app should then be viewable at *localhost:3000* in the browser tab
+$ meteor npm run start
+```
+
+If all goes well, the application will appear at [http://localhost:3000](http://localhost:3000). If you have an account on the UH test CAS server, you can login. 
